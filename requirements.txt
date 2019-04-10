@@ -1,0 +1,7 @@
+numpy
+mpmath
+matplotlib
+scipy
+ase>=3.17.0
+graphviz
+tqdm
