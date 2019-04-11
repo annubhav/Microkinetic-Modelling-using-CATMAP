@@ -26,7 +26,7 @@ rxn_expressions = [
                'CO* -> CO_g + *_s',
                'CH* + O* -> COH* + *_s',
 
-               'O* + H* <-> O-H* + *_s -> OH* + *_s',
+               
 
 
 
