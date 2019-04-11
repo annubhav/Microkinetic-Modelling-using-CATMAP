@@ -49,16 +49,15 @@ Description:
         and energies.
 """
 import warnings
-import os
-from uuid import uuid4
+from os import listdir, mkdir
+import os.path
 import numpy as np
 import ase.db
-from ase.symbols import string2symbols
+from ase.atoms import string2symbols
 from ase.data import covalent_radii, atomic_numbers
 from ase.calculators.singlepoint import SinglePointDFTCalculator
 from catmap.api.bee import BEEFEnsemble as bee
-
-
+import csv
 try:
     from tqdm import tqdm
 except (ImportError, ModuleNotFoundError):
@@ -202,16 +201,13 @@ class EnergyLandscape(object):
         """
         self.formation_energies[key] += correction
 
-    def db_attach_reference_id(self, slab_db, ads_db, overwrite=True):
+    def db_attach_reference_id(self, slab_db, ads_db):
         slab_dict = self._slabs()
         c_ads = ase.db.connect(ads_db)
         for key in slab_dict:
             slab_id = int(slab_dict[key]['id'])
             for ads_id in slab_dict[key]['ads_ids']:
-                if overwrite:
-                    c_ads.update(ads_id, slab_id=slab_id)
-                elif 'slab_id' not in c_ads.get(ads_id):
-                    c_ads.update(ads_id, slab_id=slab_id)
+                c_ads.update(ads_id, slab_id=slab_id)
 
     def _slabs(self):
         """Return a dictionary constaining keys of slabs and dictionaries with
@@ -530,23 +526,13 @@ class EnergyLandscape(object):
                 ens = self.bee.get_ensemble_perturbations(BEEFvdW_contribs)
             except AttributeError:
                 ens = 0  # np.zeros(self.bee.size)
-            if 'path_id' in d:
-                rxn_id = str(d.path_id)
-            else:
-                rxn_id = uuid4().hex
-            if 'distance' in d:
-                distance = float(d.distance)
-            else:
-                distance = np.nan
-            if 'step' in d:
-                step = int(d.step)
-            else:
-                step = np.nan
+            rxn_id = str(d.path_id)
             if rxn_id in rxn_paths:
                 rxn_paths[rxn_id]['pes'].append(abinitio_energy)
                 rxn_paths[rxn_id]['dbids'].append(dbid)
                 rxn_paths[rxn_id]['ens'].append(ens)
-                rxn_paths[rxn_id]['distance'].append(distance)
+                # try:
+                rxn_paths[rxn_id]['distance'].append(float(d.distance))
                 # except AttributeError:
                 #    d0 = c.get(rxn_paths[rxn_id]['dbids'][0])
                 #    atoms0 = c.get_atoms(rxn_paths[rxn_id]['dbids'][0])
@@ -579,8 +565,8 @@ class EnergyLandscape(object):
                                      'dbids': [dbid],
                                      'ens': [ens],
                                      'site': site,
-                                     'images': [step],
-                                     'distance': [distance]}
+                                     'images': [int(d.step)],
+                                     'distance': [float(d.distance)]}
         return rxn_paths
 
     def _mol2ref(self, references):
@@ -799,57 +785,52 @@ class EnergyLandscape(object):
             key = '1_' + species + '_' + m + '_' + site
             images = self.rxn_paths[rxn_id]['images']
             pes = np.array(self.rxn_paths[rxn_id]['pes'])
-            if len(images) > 1:
-                s = np.argsort(images)
-                # Look for local minima and maxima.
-                localmins = np.where(np.r_[True, pes[s][1:] < pes[s][:-1]] &
-                                     np.r_[pes[s][:-1] < pes[s][1:], True])[0]
-                localmaxs = np.where(np.r_[True, pes[s][1:] > pes[s][:-1]] &
-                                     np.r_[pes[s][:-1] > pes[s][1:], True])[0]
-                # Measure path roughness
-                differences = np.diff(pes[s])
-                roughness = np.std(differences)
-                # For fixed bond length (drag) calculations
-                g1, g2 = species.split('-')
-                dbond = covalent_radii[atomic_numbers[g1[0]]]
-                if len(g2) > 0:
-                    dbond += covalent_radii[atomic_numbers[g2[0]]]
-                else:
-                    # Assume the bond is with the surface.
-                    try:
-                        dbond += covalent_radii[atomic_numbers[
-                            m.split('_')[0]]]
-                    except KeyError:
-                        print("Bond not defined.")
-                if len(np.unique(images)) != len(images):
-                    warn = True
-                    print('non unique image number!')
-                    print('Warning!', species, m, roughness,
-                          len(localmaxs), len(localmins), images)
-                    continue
-                if (len(localmaxs) > 1 or
-                    len(localmins) > 2 or
-                   len(localmins) == 1):
-                    warn = True
+            s = np.argsort(images)
+            # Look for local minima and maxima.
+            localmins = np.where(np.r_[True, pes[s][1:] < pes[s][:-1]] &
+                                 np.r_[pes[s][:-1] < pes[s][1:], True])[0]
+            localmaxs = np.where(np.r_[True, pes[s][1:] > pes[s][:-1]] &
+                                 np.r_[pes[s][:-1] > pes[s][1:], True])[0]
+            # Measure path roughness
+            differences = np.diff(pes[s])
+            roughness = np.std(differences)
+            # For fixed bond length (drag) calculations
+            g1, g2 = species.split('-')
+            dbond = covalent_radii[atomic_numbers[g1[0]]]
+            if len(g2) > 0:
+                dbond += covalent_radii[atomic_numbers[g2[0]]]
+            else:
+                # Assume the bond is with the surface.
                 try:
-                    shortest = np.nanmin(self.rxn_paths[rxn_id]['distance'])
-                    if shortest > dbond * rtol:
-                        warn = True
-                        s_last = np.argmax(self.rxn_paths[rxn_id]['images'])
-                        calculate.append(
-                            self.rxn_paths[rxn_id]['dbids'][s_last])
-                        continue
+                    dbond += covalent_radii[atomic_numbers[m.split('_')[0]]]
                 except KeyError:
-                    print('Distances missing in reaction path.')
-                if warn:
-                    warnings.warn("Warning! " + species + "*" + m + " " +
-                                  str(round(dbond * rtol, 3)) + " AA. " +
-                                  str(round(shortest, 3)) + " AA. " +
-                                  str(roughness) + " eV. " +
-                                  str(len(localmaxs)) + " local maxima. " +
-                                  str(len(localmins)) + " local minima. " +
-                                  str(len(images)) + " images.")
+                    print("Bond not defined.")
+            if len(np.unique(images)) != len(images):
+                warn = True
+                print('non unique image number!')
+                print('Warning!', species, m, roughness,
+                      len(localmaxs), len(localmins), images)
+                continue
+            if len(localmaxs) > 1 or len(localmins) > 2 or len(localmins) == 1:
+                warn = True
+            try:
+                shortest = np.min(self.rxn_paths[rxn_id]['distance'])
+            except KeyError:
+                print('Distances missing in reaction path.')
+            if shortest > dbond * rtol:
+                warn = True
+                s_last = np.argmax(self.rxn_paths[rxn_id]['images'])
+                calculate.append(self.rxn_paths[rxn_id]['dbids'][s_last])
+                continue
             tst = np.argmax(pes)
+            if warn:
+                warnings.warn("Warning! " + species + "*" + m + " " +
+                              str(round(dbond * rtol, 3)) + " AA. " +
+                              str(round(shortest, 3)) + " AA. " +
+                              str(roughness) + " eV. " +
+                              str(len(localmaxs)) + " local maxima. " +
+                              str(len(localmins)) + " local minima. " +
+                              str(len(images)) + " images.")
             if key not in abinitio_energies:
                 abinitio_energies[key] = pes[tst]
                 dbids[key] = self.rxn_paths[rxn_id]['dbids'][tst]
@@ -1071,7 +1052,7 @@ class EnergyLandscape(object):
         #              'frequencies', 'reference', 'coverage', 'std']
         # header = '\t'.join(headerlist)
 
-    def db_attach_formation_energy(self, fname, key_name, overwrite=True):
+    def db_attach_formation_energy(self, fname, key_name):
         """ Update a database file to append formation energies.
 
         Parameters
@@ -1082,14 +1063,10 @@ class EnergyLandscape(object):
         c = ase.db.connect(fname)
         for key in tqdm(list(self.formation_energies)):
             if 'gas' not in str(key):
-                if overwrite:
-                    kvp = {key_name: float(self.formation_energies[key])}
-                    c.update(int(self.dbid[key]), **kvp)
-                elif key_name not in c.get(int(self.dbid[key])):
-                    kvp = {key_name: float(self.formation_energies[key])}
-                    c.update(int(self.dbid[key]), **kvp)
+                kvp = {key_name: float(self.formation_energies[key])}
+                c.update(int(self.dbid[key]), **kvp)
 
-    def make_input_file(self, file_name, site_specific='facet',
+    def make_input_file(self, file_name, site_specific=False,
                         catalyst_specific=False, covariance=None,
                         reference=None):
         """ Saves the catmap input file.
@@ -1216,21 +1193,8 @@ class EnergyLandscape(object):
     def make_nested_folders(self, project, reactions, surfaces=None,
                             site='site', mol_db=None,
                             slab_db=None, ads_db=None, ts_db=None,
-                            publication='', url='', xc='xc', code='code'):
+                            publication='', url=''):
         """Saves a nested directory structure.
-        The folder structure for catalysis-hub.org should be
-        <project>
-            <code>
-                <xc>
-                    <catalyst>
-                        <facet>
-                            <reaction>@<site>
-                                <species>.traj or
-                                <species>_<slab>.traj or
-                                'TS'.traj
-                        <catalyst>_<phase>_<bulk>
-                    <gas>
-                        <species>.traj>
 
         Parameters
         ----------
@@ -1255,16 +1219,12 @@ class EnergyLandscape(object):
         url : str
             url to publication.
         """
-        data_folder = project + '/' + code + '/' + xc
-
         # Create a header
-        # spreadsheet = [['chemical_composition', 'facet', 'reactants',
-        #                'products', 'reaction_energy',
-        #                'beef_standard_deviation',
-        #                'activation_energy', 'DFT_code', 'DFT_functional',
-        #                'reference', 'url']]
-
-        # Connect to databases.
+        spreadsheet = [['chemical_composition', 'facet', 'reactants',
+                        'products', 'reaction_energy',
+                        'beef_standard_deviation',
+                        'activation_energy', 'DFT_code', 'DFT_functional',
+                        'reference', 'url']]
         if surfaces is None:
             surfaces = [s for s in self.reference_epot.keys() if 'slab' in s]
         if mol_db is None:
@@ -1283,56 +1243,73 @@ class EnergyLandscape(object):
             c_slab = ase.db.connect(slab_db)
         if ts_db is not None:
             c_ts = ase.db.connect(ts_db)
-
-        # Iterate over surfaces
         Nsurf = 0
         Nrxn = 0
-        for slabkey in surfaces:
-            [n, species, name, phase,
-             lattice, facet, cell, slab] = slabkey.split('_')
-            catalyst_name = name.replace('/', '-') + '_' + phase
-            path_surface = data_folder + '/' + catalyst_name
-            facet_name = facet.replace('(', '').replace(')', '') + '_' + cell
-            path_facet = path_surface + '/' + facet_name
-
-            # Loop over reaction expressions.
-            for i, rxn in enumerate(reactions):
-                # Separate left and right side of reaction, and ts.
-                states = rxn.replace(' ', '').split('<->')
+        # Loop over reaction expressions.
+        for i in range(len(reactions)):
+            # Separate left and right side of reaction, and ts if applicable.
+            states = reactions[i].replace(' ', '').split('<->')
+            if len(states) == 1:
+                states = states[0].split('->')
                 if len(states) == 1:
-                    states = states[0].split('->')
-                    if len(states) == 1:
-                        states = states[0].split('<-')
-                elif len(states) < 3:
-                    states = [states[0]] + states[-1].split('->')
-                    if len(states) < 3:
-                        states = states[0].split('<-') + states[1:]
-
-                # List individual species.
-                rname, reactants = self._state2species(states[0])
-                pname, products = self._state2species(states[-1])
-
-                reaction_name = '__'.join([rname, pname])
-                path_reaction = path_facet + '/' + reaction_name
+                    states = states[0].split('<-')
+            elif len(states) < 3:
+                states = [states[0]] + states[-1].split('->')
+                if len(states) < 3:
+                    states = states[0].split('<-') + states[1:]
+            # List individual species.
+            reactants = states[0].split('+')
+            tstates = states[1].split('+')
+            products = states[-1].split('+')
+            pspecies = []
+            rspecies = []
+            for specie in reactants:
+                if '_g' in specie:
+                    rspecies.append(specie.split('_')[0] + 'gas')
+                elif '*_' in specie:
+                    rspecies.append('star')
+                else:
+                    rspecies.append(specie.split('_')[0] + 'star')
+            for specie in products:
+                if '_g' in specie:
+                    pspecies.append(specie.split('_')[0] + 'gas')
+                elif '*_' in specie:
+                    pspecies.append('star')
+                else:
+                    pspecies.append(specie.split('_')[0] + 'star')
+            rname = '_'.join(rspecies)
+            pname = '_'.join(pspecies)
+            reaction_name = '__'.join([rname, pname])
+            path_reaction = project + '/' + reaction_name
+            for slabkey in surfaces:
+                totraj = {}
+                [n, species, name, phase,
+                 lattice, facet, cell, slab] = slabkey.split('_')
+                path_surface = path_reaction + '/' + name.replace('/', '')
+                facet_name = facet.replace('(', '').replace(')', '')
+                path_facet = path_surface + '/' + facet_name
                 DeltaE = 0.
                 de = np.zeros(self.bee.size)
                 ea = 0.
                 intermediates_exist = True
-                totraj = {}
                 # Find reactant structures and energies
                 for reactant in reactants:
                     species, sitesymbol = reactant.split('_')
-                    n, species = self._coefficient_species(species)
+                    if species[0].isdigit():
+                        n = int(species[0])
+                        species = species[1:]
+                    else:
+                        n = 1
                     if sitesymbol == 'g':
                         rkey = species + '_gas'
-                        fname = data_folder + '/gas/' + rkey
+                        fname = path_reaction + '/' + rkey
                     elif species == '*':
                         rkey = slabkey
-                        fname = path_facet + '/empty_slab'
+                        fname = path_facet + '/empty_surface'
                     else:
                         rkey = '_'.join(['1', species.replace('*', ''), name,
                                          phase, lattice, facet, cell, site])
-                        fname = path_reaction + '/' + species
+                        fname = path_facet + '/' + species
                     if rkey not in self.dbid:
                         intermediates_exist = False
                         break
@@ -1346,7 +1323,6 @@ class EnergyLandscape(object):
                     continue
                 # Find transition state structures and energies.
                 if ts_db is not None:
-                    tstates = states[1].split('+')
                     for ts in tstates:
                         if '-' not in ts:
                             continue
@@ -1357,7 +1333,7 @@ class EnergyLandscape(object):
                             continue
                         totraj.update({tskey:
                                        {'dbid': self.dbid[tskey],
-                                        'fname': path_reaction + '/TS'}})
+                                        'fname': path_facet + '/' + ts}})
                         ea += self.formation_energies[tskey] - DeltaE
                 # Find product structures and energies.
                 for product in products:
@@ -1369,14 +1345,14 @@ class EnergyLandscape(object):
                         n = 1
                     if sitesymbol == 'g':
                         pkey = species + '_gas'
-                        fname = data_folder + '/gas/' + pkey
+                        fname = path_reaction + '/' + pkey
                     elif species == '*':
                         pkey = slabkey
-                        fname = path_facet + '/empty_slab'
+                        fname = path_facet + '/empty_surface'
                     else:
                         pkey = '_'.join(['1', species.replace('*', ''), name,
                                          phase, lattice, facet, cell, site])
-                        fname = path_reaction + '/' + species
+                        fname = path_facet + '/' + species
                     if pkey not in self.dbid:
                         intermediates_exist = False
                         break
@@ -1388,13 +1364,23 @@ class EnergyLandscape(object):
                         de += n * self.de_dict[pkey]
                 # If all states are found for this surface, write.
                 if intermediates_exist:
-                    # Loop over states to export.
+                    if not os.path.isdir(project):
+                        mkdir(project)
+                    if reaction_name not in listdir(project):
+                        mkdir(path_reaction)
+                    if name.replace('/', '') not in listdir(path_reaction):
+                        mkdir(path_surface)
+                    if facet_name not in listdir(path_surface):
+                        mkdir(path_facet)
+                    # Loop over atomic structures to export.
                     for trajkey in totraj.keys():
                         fname = totraj[trajkey]['fname'] + '.traj'
-                        # Load the atomic structure from appropriate db.
                         if 'gas' in trajkey:
-                            atoms = c_mol.get_atoms(self.dbid[trajkey])
-                            d = c_mol.get(self.dbid[trajkey])
+                            if fname in os.listdir(path_reaction):
+                                continue
+                            else:
+                                atoms = c_mol.get_atoms(self.dbid[trajkey])
+                                d = c_mol.get(self.dbid[trajkey])
                         elif '-' in trajkey.split('_')[1]:
                             atoms = c_ts.get_atoms(self.dbid[trajkey])
                             d = c_ts.get(self.dbid[trajkey])
@@ -1404,96 +1390,27 @@ class EnergyLandscape(object):
                         else:
                             atoms = c_ads.get_atoms(self.dbid[trajkey])
                             d = c_ads.get(self.dbid[trajkey])
+                        # If a calculator is not attached, attach a dummy.
                         if atoms.calc is None:
-                            # Require a calculator.
                             calc = SinglePointDFTCalculator(atoms)
                             calc.results['energy'] = float(d.epot)
                             atoms.set_calculator(calc)
-                        if 'data' not in atoms.info:
-                            atoms.info['data'] = {}
-                        if trajkey in self.freq:
-                            # Attach vibrational frequencies.
-                            atoms.info['data'].update(
-                                {'frequencies': self.freq[trajkey]})
+                        fname = fname.replace('(', '').replace(')', '')
                         # Save trajectory file.
-                        folder_structure = fname.split('/')
-                        for depth in range(1, len(folder_structure)-1):
-                            directory = '/'.join(folder_structure[:depth+1])
-                            if not os.path.isdir(directory):
-                                os.mkdir(directory)
                         atoms.write(fname)
                     # Store rows for spreadsheet.
-                    # std = np.std(de)
-                    # spreadsheet.append([name, facet, rname, pname,
-                    #                     DeltaE, std, ea,
-                    #                     code, xc,
-                    #                     publication, url])
+                    std = np.std(de)
+                    spreadsheet.append([name, facet, rname, pname,
+                                        DeltaE, std, ea,
+                                        'Quantum Espresso',
+                                        'BEEF-vdW', publication, url])
                     # width, height, angle, covariance
-                    Nrxn += 1
+                    Nsurf += 1
                 else:
                     continue
-            Nsurf += 1
-        # with open(project + '/data.csv', 'wb') as f:
-        #     writer = csv.writer(f)
-        #     writer.writerows(spreadsheet)
+            Nrxn += 1
+        with open(project + '/data.csv', 'wb') as f:
+            writer = csv.writer(f)
+            writer.writerows(spreadsheet)
         print(Nrxn, 'reactions imported.')
         print(Nsurf, 'surfaces saved.')
-
-    def _state2species(self, state):
-        """Parse one side of a CatMAP rxn expression, i.e. a chemical state.
-
-        Parameters
-        ----------
-        state : str
-            Left or right side of CatMAP rxn expression, excluding arrows.
-
-        Returns
-        ----------
-        state_name : str
-            Name of chemical state formatted for folder naming.
-        slist : list
-            List of species. <coefficient><structure formula or Hill formula>.
-        """
-        slist = state.split('+')
-        species = []
-        for specie in slist:
-            if '_g' in specie:
-                # Gas species.
-                species.append(specie.split('_')[0] + 'gas')
-            elif '*_' in specie:
-                # Empty sites.
-                species.append(specie.split('_')[0].replace('*', 'star'))
-            else:
-                # Adsorbates.
-                species.append(specie.split('_')[0] + 'star')
-        return '_'.join(species), slist
-
-    def _coefficient_species(self, species):
-        """Return the stochiometric coefficient and the species type.
-
-        Parameters
-        ----------
-        species : str
-            <coefficient><structure formula or Hill formula>.
-
-        Returns
-        ----------
-        n : int
-            Stochiometric coefficient.
-        species : str
-            Species name.
-        """
-        i = 0
-        n = 1
-        if species[0] == '-':
-            # Negative coefficient allowed.
-            i += 1
-            n = -1
-        while species[i].isdigit():
-            i += 1
-        if i > 1:
-            n = int(species[:i])
-        elif i == 1 and n != -1:
-            n = int(species[0])
-
-        return n, species[i:]

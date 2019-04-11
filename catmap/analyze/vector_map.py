@@ -1,7 +1,6 @@
 from .analysis_base import *
 from string import Template
 
-
 class VectorMap(MapPlot, ReactionModelWrapper):
     """
     .. todo:: __doc__
