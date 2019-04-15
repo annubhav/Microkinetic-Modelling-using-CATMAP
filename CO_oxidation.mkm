@@ -6,8 +6,8 @@ rxn_expressions = [
 
                '*_s + CO_g -> CO*',
                '2*_s + O2_g <-> O-O* + *_s -> 2O*',
-#               '*_s + O2_g -> O2_s',
-#               '*_s + O2_s <-> O-O* + *_s -> 2O*',
+               '*_s + O2_g -> O2_s',
+              '*_s + O2_s <-> O-O* + *_s -> 2O*',
                'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',
                'CO2_g + 2*_s <-> O-CO*_s + *_s -> O*_s + CO*_s',
 
@@ -26,7 +26,7 @@ rxn_expressions = [
                'CO* -> CO_g + *_s',
                'CH* + O* -> COH* + *_s',
 
-               
+
 
 
 
