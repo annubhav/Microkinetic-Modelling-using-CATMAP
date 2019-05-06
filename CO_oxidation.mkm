@@ -12,8 +12,12 @@ rxn_expressions = [
                'CO2_g + 2*_s <-> O-CO*_s + *_s -> O*_s + CO*_s',
 
                'CO* + *_s <-> C-O* + *_s -> C* + O*',
+
                'C* + H* <-> C-H* + *_s -> CH* + *_s',
+               'C-H* -> C-H*',
                'CH* + H* <-> H-CH* + *_s -> CH2* + *_s',
+               'H-CH2* -> H-CH2*',
+               'H-CH3* -> H-CH3*',
                'CH2* + H* <-> H-CH2* + *_s -> CH3* + *_s',
                'CH3* + H* <-> H-CH3* + *_s -> CH4_g + 2*_s',
 
