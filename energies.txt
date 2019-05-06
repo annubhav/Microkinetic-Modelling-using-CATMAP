@@ -1,71 +1,31 @@
 surface_name	site_name	species_name	formation_energy	bulk_structure	frequencies	other_parameters	reference
-None	gas	CO2	2.45	None	[1333,2349,667,667]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-None	gas	CO	2.74	None	[2170]	[]	"Energy Environ. Sci., 3, 1311-1315 (2010)"
+None	gas	CO2	2.47	None	"[1333,2349,667,667]"	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
+None	gas	CO	2.77	None	[2170]	[]	"Energy Environ. Sci., 3, 1311-1315 (2010)"
 None	gas	O2	5.42	None	[1580]	[]	Falsig et al (2012)
-None	gas	H2O	0.00		None	[3657,1595,3756]	[]
-None	gas	H2	0.001	None	[4401]	[]
-None	gas	CH4	0	None	[2917,1534,1534,3019,3019,2019,1306,1306,1306]	[]	Fatima Jalid, Tuhin S Khan
-Re	111	O	-1.15	fcc	[]	[]	Falsig et al (2012)
-Ru	111	O	-0.07	fcc	[]	[]	Falsig et al (2012)
-Co	111	O	0.15	fcc	[]	[]	Falsig et al (2012)
-Ni	111	O	0.35	fcc	[]	[]	Falsig et al (2012)
-Rh	111	O	0.55	fcc	[]	[]	Falsig et al (2012)
-Cu	111	O	1.07	fcc	[]	[]	Falsig et al (2012)
-Pd	111	O	1.55	fcc	[]	[]	Falsig et al (2012)
-Pt	111	O	1.62	fcc	[]	[]	Falsig et al (2012)
-Ag	111	O	2.05	fcc	[]	[]	Falsig et al (2012)
-Au	111	O	2.61	fcc	[]	[]	Falsig et al (2012)
-Ru	111	CO	1.3	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Rh	111	CO	1.34	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Pd	111	CO	1.55	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ni	111	CO	1.63	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Pt	111	CO	1.7	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Cu	111	CO	2.58	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ag	111	CO	2.99	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Au	111	CO	3.04	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ru	111	O-CO	2.53	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Rh	111	O-CO	3.1	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ni	111	O-CO	3.25	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Pt	111	O-CO	4.04	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Cu	111	O-CO	4.18	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Pd	111	O-CO	4.2	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ag	111	O-CO	5.05	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Au	111	O-CO	5.74	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ag	111	O-O	5.98	fcc	[]	[]	Falsig et al (2012)
-Au	111	O-O	7.22	fcc	[]	[]	Falsig et al (2012)
-Cu	111	O-O	4.74	fcc	[]	[]	Falsig et al (2012)
-Pt	111	O-O	5.35	fcc	[]	[]	Falsig et al (2012)
-Rh	111	O-O	3.79	fcc	[]	[]	Falsig et al (2012)
-Ru	111	O-O	3.34	fcc	[]	[]	Falsig et al (2012)
-Pd	111	O-O	5.34	fcc	[]	[]	Falsig et al (2012)
-Ru	111	O2	3.15	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Rh	111	O2	3.63	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ni	111	O2	3.76	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Pd	111	O2	4.29	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Cu	111	O2	4.52	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Pt	111	O2	4.56	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ag	111	O2	5.1	fcc	[]	[]	"Angew. Chem. Int. Ed., 47, 4835 (2008)"
-Ir	211	CO	0.673	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Re	211	CO	0.753	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Ru	211	CO	0.983	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Rh	211	CO	1.073	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Pt	211	CO	1.113	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Pd	211	CO	1.223	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Ni	211	CO	1.253	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Co	211	CO	1.403	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Fe	211	CO	1.413	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Cu	211	CO	2.283	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Au	211	CO	2.573	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Ag	211	CO	2.873	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Ru	211	O-CO	2.351	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Rh	211	O-CO	2.559	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Co	211	O-CO	2.732	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Ni	211	O-CO	2.768	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Pt	211	O-CO	3.528	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Cu	211	O-CO	3.918	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Pd	211	O-CO	3.992	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Ag	211	O-CO	5.099	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
-Au	211	O-CO	5.448	fcc	[]	[]	J. Phys. Chem. C, 113 (24), 10548-10553 (2009)
+None	gas	H2O	0		None	[]	[]
+None	gas	H2	0	None	[4170]	[]	
+None	gas	CH4	0	None	"[2917,1534,1534,3019,3019,2019,1306,1306,1306]"	[]	"Fatima Jalid, Tuhin S Khan"
+Ir	211	CO	0.673	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Re	211	CO	0.753	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Ru	211	CO	0.983	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Rh	211	CO	1.073	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Pt	211	CO	1.113	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Pd	211	CO	1.223	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Ni	211	CO	1.253	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Co	211	CO	1.403	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Fe	211	CO	1.413	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Cu	211	CO	2.283	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Au	211	CO	2.573	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Ag	211	CO	2.873	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Ru	211	O-CO	2.351	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Rh	211	O-CO	2.559	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Co	211	O-CO	2.732	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Ni	211	O-CO	2.768	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Pt	211	O-CO	3.528	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Cu	211	O-CO	3.918	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Pd	211	O-CO	3.992	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Ag	211	O-CO	5.099	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
+Au	211	O-CO	5.448	fcc	[]	[]	"J. Phys. Chem. C, 113 (24), 10548-10553 (2009)"
 Ag	211	O-O	5.34	fcc	[]	[]	Falsig et al (2012)
 Au	211	O-O	6.18	fcc	[]	[]	Falsig et al (2012)
 Pt	211	O-O	4.9	fcc	[]	[]	Falsig et al (2012)
@@ -80,10 +40,10 @@ Pt	211	O	1.32	fcc	[]	[]	Falsig et al (2012)
 Pd	211	O	1.58	fcc	[]	[]	Falsig et al (2012)
 Ag	211	O	2.11	fcc	[]	[]	Falsig et al (2012)
 Au	211	O	2.61	fcc	[]	[]	Falsig et al (2012)
-Fe	211	O	-0.73	fcc	[]	[]	Phys. Rev. Lett. 99, 016105 (2007)
-Ir	211	O	-0.04	fcc	[]	[]	Phys. Rev. Lett. 99, 016105 (2007)
+Fe	211	O	-0.73	fcc	[]	[]	"Phys. Rev. Lett. 99, 016105 (2007)"
+Ir	211	O	-0.04	fcc	[]	[]	"Phys. Rev. Lett. 99, 016105 (2007)"
 Re	211	C	0.38	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-CO	211	C	1.70	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+CO	211	C	1.7	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ni	211	C	1.52	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Au	211	C	4.77	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ag	211	C	5.07	fcc	[]	[]	Fatima Jalid Tuhin S Khan
@@ -137,10 +97,10 @@ Pt	211	H-H	0.19	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Cu	211	H-H	0.78	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Pd	211	H-H	0.12	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Au	211	H-H	1.15	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pd	211	CHO	1.90	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pt	211	CHO	1.92	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Rh	211	CHO	1.94	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Cu	211	CHO	3.55	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	COH	1.9	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	COH	1.92	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	COH	1.94	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	COH	3.55	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Pt	211	CH3	0.46	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Cu	211	CH3	0.97	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ru	211	CH3	0.06	fcc	[]	[]	Fatima Jalid Tuhin S Khan
@@ -163,28 +123,10 @@ Co	211	CH2	0.79	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ag	211	CH2	2.87	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Pd	211	CH2	1.28	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ni	211	CH2	1.14	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pd	211	CHO	1.90	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pt	211	CHO	1.92	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Rh	211	CHO	1.94	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Cu	211	CHO	3.55	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pt	211	CHCO	3.13	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Cu	211	CHCO	3.66	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Rh	211	CHCO	2.69	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pd	211	CHCO	3.43	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ag	211	CHCO	4.17	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pd	211	CH-CO	4.321	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Cu	211	CH-CO	6.461	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ag	211	CH-CO	7.291	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Au	211	CH-CO	7.731	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pt	211	H-CH	2.35	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Cu	211	H-CH	3.27	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ru	211	H-CH	1.07	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ni	211	H-CH	1.93	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ag	211	H-CH	4.74	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Au	211	H-CH	4.58	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Rh	211	H-CH	1.54	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pd	211	H-CH	2.05	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Re	211	H-CH	0.6	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	COH	1.9	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	COH	1.92	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	COH	1.94	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	COH	3.55	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Re  	211	H-CH2 	0.28	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ru  	211	H-CH2 	0.68	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Rh  	211	H-CH2 	0.79	fcc	[]	[]	Fatima Jalid Tuhin S Khan
@@ -205,11 +147,90 @@ Ni  	211	H-CH3 	1.13	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Cu  	211	H-CH3 	1.7	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Au  	211	H-CH3 	1.83	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ag  	211	H-CH3 	2.23	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pt  	211	C-H	3.06	fcc	[]	[]
-Cu  	211	C-H	4.31	fcc	[]	[]
-Ru  	211	C-H	1.74	fcc	[]	[]
-Rh  	211	C-H	1.97	fcc	[]	[]
-Pd  	211	C-H	2.25	fcc	[]	[]
+Pt	211	H-CH	2.35	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	H-CH	3.27	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ru	211	H-CH	1.07	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ni	211	H-CH	1.93	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	H-CH	4.74	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	H-CH	4.58	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	H-CH	1.54	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	H-CH	2.05	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Re	211	H-CH	0.6	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	C-H	3.06	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	C-H	4.31	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ru	211	C-H	1.74	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	C-H	1.97	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	C-H	2.25	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH2CH2OH	2.26	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH2CH2OH	3.07	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH2CH2OH	2.64	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH2CH2OH	3.36	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH2CH2OH	2.44	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH2CHOH	3.12	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH2CHOH	2.48	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH2CHOH	1.58	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH2CHOH	3.13	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH2CHOH	2.43	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH2CO	1.99	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH2CO	3.99	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH2CO	2.75	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH2CO	3.05	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH2CO	3.91	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH2COH	3.65	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH2COH	2.88	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH2COH	1.72	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH2COH	4.2	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH2COH	2.39	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3CHO	2.59	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3CHO	2.53	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3CHO	2.19	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3CHO	2.65	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3CHO	1.61	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3CHOH	1.43	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3CHOH	3.29	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3CHOH	3.03	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3CHOH	2.26	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3CHOH	2.29	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3CO	3.21	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3CO	2.36	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3CO	1.66	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3CO	3.54	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3CO	1.52	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3COH	1.46	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3COH	3.37	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3COH	1.84	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3COH	2.58	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3COH	3.97	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CHCHOH	2.03	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CHCHOH	3.46	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CHCHOH	2.71	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CHCHOH	4.05	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CHCHOH	3.19	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CHCO	3.13	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CHCO	3.66	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CHCO	2.69	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CHCO	3.43	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CHCO	4.17	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH-CO	3.761	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH-CO	4.321	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH-CO	6.461	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH-CO	7.291	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	CH-CO	7.731	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CHCOH	2.93	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CHCOH	4.71	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CHCOH	2.85	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CHCOH	5.63	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CHCOH	3.46	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	O-H	1.6	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	O-H	1.63	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ru	211	O-H	0.27	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	O-H	0.73	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ir	211	O-H	0.6	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ni	211	O-H	0.68	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	O-H	2.8	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	O-H	3.18	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	O-H	1.75	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Re	211	C-O	1.21	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Fe	211	C-O	2.5	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ru	211	C-O	2.8	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Rh	211	C-O	3.03	fcc	[]	[]	Fatima Jalid Tuhin S Khan
@@ -220,15 +241,36 @@ Pt	211	C-O	4.11	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Pd	211	C-O	4.63	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ag	211	C-O	8.07	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Au	211	C-O	8.18	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pt	211	O-H	1.6	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Cu	211	O-H	1.63	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ru	211	O-H	0.27	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Rh	211	O-H	0.73	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ir	211	O-H	0.6	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ni	211	O-H	0.68	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Ag	211	O-H	2.8	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Au	211	O-H	3.18	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pd	211	O-H	1.75	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3CH2	2.3	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ru	211	CH3CH2	1.06	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	CH3CH2	1.94	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3CH2	1.91	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3CH2	1.22	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3CH2	1.26	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3CH2	1.51	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3-CH2	4.63	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	CH3-CH2	4.05	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3-CH2	2.64	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3-CH2	2.39	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ru	211	CH3-CH2	2.33	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3CH2-H	2.52	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3CH2-H	1.48	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3CH2-H	1.45	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3CH2-H	3.04	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	CH3CH2-H	2.59	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3CH2O	1.76	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3CH2O	2.5	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3CH2O	1.85	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3CH2O	2.36	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CHOH	2.76	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CHOH	1.09	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CHOH	1.58	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CHOH	1.48	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH2CH2	1.48	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH2CH2	1.58	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH2CH2	2.26	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH2CH2	2.39	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH2CH2	1.72	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Cu	211	CCO	4.36	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Pd	211	CCO	4.12	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Pt	211	CCO	4.02	fcc	[]	[]	Fatima Jalid Tuhin S Khan
@@ -241,3 +283,27 @@ Pt	211	C-CO	4.83	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Cu	211	C-CO	6.72	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ag	211	C-CO	7.89	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Au	211	C-CO	8.49	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3-O	2.32	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3-O	3.12	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3-O	3.14	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3-O	3.48	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3-O	4.2	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ru	211	CH3-CH3	2.42	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3-CH3	2.72	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3-CH3	3.39	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3-CH3	3.75	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	CH3-CH3	4.41	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3-CH3	4.53	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ag	211	CH3CH2-O	4.61	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ru	211	CH3CH2-O	2.26	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Au	211	CH3CH2-O	4.87	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Cu	211	CH3CH2-O	3.67	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pt	211	CH3CH2-O	3.37	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Rh	211	CH3CH2-O	2.6	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Pd	211	CH3CH2-O	3.88	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+							
+							
+							
+							
+							
+							
