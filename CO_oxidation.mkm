@@ -4,23 +4,19 @@
 
 rxn_expressions = [
 
-               '*_s + CO_g -> CO*',
-               '2*_s + O2_g <-> O-O* + *_s -> 2O*',
-               'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',
-               'CO2_g + 2*_s <-> O-CO*_s + *_s -> O*_s + CO*_s',
-               'CO* + *_s <-> C-O* + *_s -> C* + O*',
-               '2O* -> O2_g + 2*_s',
-               'H2O_g -> H2O_g',
-               'H2O_g + *_s -> H2O*',
-               'H2O* + *_s <-> H-OH* + *_s -> H* + OH*',
-               'OH* + *_s <-> O-H* + *_s -> O* + H*',
-               'H* + C* <-> C-H* + *_s -> CH* + *_s',
-               'CH* + H* <-> H-CH* + *_s -> CH2* + *_s',
-               'CO* + H* <-> H-CO* + *_s -> HCO* + *_s',
-               'OH* + OH* <-> O-H2O* + *_s -> H2O_g + O* + *_s',
-               'C* + OH* <-> C-OH* + *_s -> COH* + *_s'
-
-
+      '*_s + CO_g -> CO*',
+      '2*_s + O2_g <-> O-O* + *_s -> 2O*',
+      'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',
+      'CO* + *_s <-> C-O* + *_s -> C* + O*',
+      '2O* -> O2_g + 2*_s',
+      'H2O_g -> H2O_g',
+      'H2O_g + *_s -> H2O*',
+      'H2O* + *_s <-> H-OH* + *_s -> H* + OH*',
+      'OH* + *_s <-> O-H* + *_s -> O* + H*',
+      'H* + C* <-> C-H* + *_s -> CH* + *_s',
+      'OH* + OH* <-> O-H2O* + *_s -> H2O_g + O* + *_s',
+      'CO* -> CO_g + *_s',
+      'C* + OH* <-> C-OH* + *_s -> COH* + *_s',
 
 
 ]
@@ -77,16 +73,14 @@ scaling_constraint_dict = {
                            'CO_s':[0,'+',None],
                            'O-CO_s':'initial_state',
                            'O-O_s':'final_state',
-                           'O-CO_s':'final_state',
+
                            'C-O_s':'final_state',
                            'O-H_s':'final_state',
                            'H-OH_s':'final_state',
                            'C-H_s':'initial_state',
                            'H-CH_s':'initial_state',
-
-                           'H-CO_s':'initial_state',
-                           'O-H2O_s':'final_state',
-                           'O-CH_s':'initial_state',
+                           'O-H2O_s':'initial_state',
+                           'C-OH_s':'initial_state',
 
                            }
 
