@@ -205,11 +205,13 @@ Ni  	211	H-CH3 	1.13	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Cu  	211	H-CH3 	1.7	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Au  	211	H-CH3 	1.83	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ag  	211	H-CH3 	2.23	fcc	[]	[]	Fatima Jalid Tuhin S Khan
-Pt  	211	C-H	3.06	fcc	[]	[]
-Cu  	211	C-H	4.31	fcc	[]	[]
-Ru  	211	C-H	1.74	fcc	[]	[]
-Rh  	211	C-H	1.97	fcc	[]	[]
-Pd  	211	C-H	2.25	fcc	[]	[]
+Pt	211	C-H	3.06	fcc	[]	[]	0
+Cu	211	C-H	4.31	fcc	[]	[]	0
+Ru	211	C-H	1.74	fcc	[]	[]	0
+Rh	211	C-H	1.97	fcc	[]	[]	0
+Pd	211	C-H	2.25	fcc	[]	[]	0
+Ni	211	C-H	1.8	fcc	[]	[]	0
+Ag	211	C-H	2.01	fcc	[]	[]	0
 Fe	211	C-O	2.5	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ru	211	C-O	2.8	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Rh	211	C-O	3.03	fcc	[]	[]	Fatima Jalid Tuhin S Khan
@@ -241,3 +243,17 @@ Pt	211	C-CO	4.83	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Cu	211	C-CO	6.72	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Ag	211	C-CO	7.89	fcc	[]	[]	Fatima Jalid Tuhin S Khan
 Au	211	C-CO	8.49	fcc	[]	[]	Fatima Jalid Tuhin S Khan
+Ni	211	O-H2O	0.33	fcc	[]	[]	2
+Cu	211	O-H2O	0.92	fcc	[]	[]	2
+Pd	211	O-H2O	1.83	fcc	[]	[]	2
+Pt	211	O-H2O	1.56	fcc	[]	[]	2
+Ag	211	O-H2O	1.86	fcc	[]	[]	2
+Ir	211	O-H2O	0.37	fcc	[]	[]	2
+Rh	211	O-H2O	0.45	fcc	[]	[]	2
+Ru	211	O-H2O	-0.1	fcc	[]	[]	2
+Au	211	O-H2O	2.9	fcc	[]	[]	2
+Cu	211	C-OH	4.74	fcc	[]	[]	2
+Pd	211	C-OH	2.35	fcc	[]	[]	2
+Pt	211	C-OH	2.98	fcc	[]	[]	2
+Ag	211	C-OH	6.54	fcc	[]	[]	2
+Rh	211	C-OH	1.99	fcc	[]	[]	2
