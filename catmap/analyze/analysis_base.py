@@ -50,7 +50,7 @@ def boltzmann_vector(energy_list,vector_list,temperature):
     def boltzmann_avg(es,ns,T):
         """
         Calculate the Boltzmann average
-        
+
         :param es: energies
         :type es: iterable
 
@@ -108,7 +108,7 @@ class MapPlot:
     :param plot_size: Size of the plot
     :type plot_size: int
 
-    :param aspect: 
+    :param aspect:
     :type aspect:
 
     :param subplots_adjust_kwargs: Dictionary of keyword arguments for adjusting matplotlib subplots
@@ -218,7 +218,7 @@ class MapPlot:
         :param ax: axes object
 
         :param overlay_map:
-        :type overlay_map: 
+        :type overlay_map:
 
         :type alpha_range:
         :type alpha_range:
@@ -742,18 +742,18 @@ class ScalingPlot:
 
     :param descriptor_dict: dictionary of descriptors
     :type descriptor_dict: dict
-    
+
     :param surface_names: list of the surface names
-    :type surface_names: list 
-    
+    :type surface_names: list
+
     :param parameter_dict: dictionary of parameters
     :type parameter_dict: dict
 
     :param scaling_function: function to project descriptors into energies.
-                             Should take descriptors as an argument and return a 
+                             Should take descriptors as an argument and return a
                              dictionary of {adsorbate:energy} pairs.
     :type scaling_function: function
-    
+
     :param x_axis_function: function to project descriptors onto the x-axis.
                             Should take descriptors as an argument and return a
                             dictionary of {adsorbate:x_value} pairs.
