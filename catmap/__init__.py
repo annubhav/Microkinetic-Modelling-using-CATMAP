@@ -1,28 +1,26 @@
-# Standard dependencies
+#Standard dependencies
 import os
 import sys
 import inspect
 import time
 try:
     import cPickle as pickle
-except (ImportError, ModuleNotFoundError):
+except:
     import _pickle as pickle
 
 import re
 from copy import copy
 from string import Template
 
-# Non-standard dependencies
+#Non-standard dependencies
 import numpy as np
 try:
     from scipy.interpolate import InterpolatedUnivariateSpline as spline
 except ImportError:
-    # input kwarg k is intentionally ignored.
-    def spline_wrapper(x_data, y_data, k=3):
+    def spline_wrapper(x_data, y_data, k=3):  # input kwarg k is intentionally ignored
         # behaves like scipy.interpolate.InterpolatedUnivariateSpline for k=1
         def spline_func(x):
-            # loss of precision here
-            return np.interp(x, map(float,x_data), map(float,y_data))
+            return np.interp(x, map(float,x_data), map(float,y_data))  # loss of precision here
         return spline_func
     spline = spline_wrapper
 
@@ -41,7 +39,7 @@ def griddata(*args, **kwargs):
         return mlab_griddata(*args, **kwargs)
 
 import mpmath as mp
-from ase.symbols import string2symbols
+from ase.atoms import string2symbols
 from ase.thermochemistry import IdealGasThermo, HarmonicThermo
 try:
     from ase.build import molecule
@@ -51,7 +49,7 @@ from ase.thermochemistry import IdealGasThermo, HarmonicThermo, HinderedThermo
 from catmap.model import ReactionModel
 from . import data
 
-__version__ = "0.3.1"
+__version__ = "0.3.0"
 
 def griddata(*args, **kwargs):
     """Wrapper function to avoid annoying griddata errors"""

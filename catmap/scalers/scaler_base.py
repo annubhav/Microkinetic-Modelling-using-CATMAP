@@ -6,7 +6,6 @@ re = catmap.re
 copy = catmap.copy
 string2symbols = catmap.string2symbols
 
-
 class ScalerBase(ReactionModelWrapper):
     def __init__(self,reaction_model = None):
         """Class for `scaling' descriptors to free energies of reaction and 
