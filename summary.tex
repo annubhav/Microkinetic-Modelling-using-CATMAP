@@ -1,0 +1,262 @@
+
+\documentclass[a4paper,8pt]{report}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[hmargin=1cm,vmargin=3cm]{geometry}
+\begin{document}
+
+\section{Elementary Reactions}
+\begin{equation}
+\label{reaction_0}
+*_s+CO_{(g)} \leftrightarrow CO^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_1}
+*_s+*_s+O_{2(g)} \leftrightarrow O\mathrm{-}O^{*_s}+*_s \rightarrow O^{*_s}+O^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_2}
+CO^{*_s}+O^{*_s} \leftrightarrow O\mathrm{-}CO^{*_s}+*_s \rightarrow CO_{2(g)}+*_s+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_3}
+CO_{2(g)}+*_s+*_s \leftrightarrow O\mathrm{-}CO^{*_s}+*_s \rightarrow O^{*_s}+CO^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_4}
+CO^{*_s}+*_s \leftrightarrow C\mathrm{-}O^{*_s}+*_s \rightarrow C^{*_s}+O^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_5}
+O^{*_s}+O^{*_s} \leftrightarrow O_{2(g)}+*_s+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_6}
+H_{2}O_{(g)} \leftrightarrow H_{2}O_{(g)}
+\end{equation}
+\begin{equation}
+\label{reaction_7}
+H_{2}O_{(g)}+*_s \leftrightarrow H_{2}O^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_8}
+H_{2}O^{*_s} \leftrightarrow H_{2}O_{(g)}+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_9}
+H_{2}O^{*_s}+*_s \leftrightarrow H\mathrm{-}OH^{*_s}+*_s \rightarrow H^{*_s}+OH^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_10}
+OH^{*_s}+*_s \leftrightarrow O\mathrm{-}H^{*_s}+*_s \rightarrow O^{*_s}+H^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_11}
+H^{*_s}+C^{*_s} \leftrightarrow CH^{*_s}+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_12}
+H^{*_s}+O^{*_s} \leftrightarrow OH^{*_s}+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_13}
+OH^{*_s}+OH^{*_s} \leftrightarrow H_{2}O^{*_s}+O^{*_s}
+\end{equation}
+\begin{equation}
+\label{reaction_14}
+CO^{*_s}+O^{*_s} \leftrightarrow CO_{2(g)}+*_s+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_15}
+CO^{*_s} \leftrightarrow CO_{(g)}+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_16}
+CH^{*_s}+O^{*_s} \leftrightarrow COH^{*_s}+*_s
+\end{equation}
+\begin{equation}
+\label{reaction_17}
+O^{*_s}+H^{*_s} \leftrightarrow O\mathrm{-}H^{*_s}+*_s \rightarrow OH^{*_s}+*_s
+\end{equation}\section{Scaling Summary}
+
+Adsorption Scaling Parameters\\
+\begin{equation}
+\label{ads_scaling_1}
+E_{CH^{*_s}} = 0.229E_{O^{*_s}} + 1.349E_{CO^{*_s}} - 0.541
+\end{equation}
+\begin{equation}
+\label{ads_scaling_2}
+E_{COH^{*_s}} = 
+\end{equation}
+\begin{equation}
+\label{ads_scaling_3}
+E_{C^{*_s}} = 0.284E_{O^{*_s}} + 1.759E_{CO^{*_s}} - 0.618
+\end{equation}
+\begin{equation}
+\label{ads_scaling_4}
+E_{H_{2}O^{*_s}} = 
+\end{equation}
+\begin{equation}
+\label{ads_scaling_5}
+E_{H^{*_s}} = 0.027E_{O^{*_s}} + 0.313E_{CO^{*_s}} - 0.745
+\end{equation}
+\begin{equation}
+\label{ads_scaling_6}
+E_{OH^{*_s}} = 0.571E_{O^{*_s}} - 0.57
+\end{equation}
+Transition-state Scaling Parameters\\
+\begin{equation}
+\label{TS_scaling_1}
+E_{C\mathrm{-}O^{*_s}} = 1.12E_{O^{*_s}} + 1.535E_{CO^{*_s}} + 1.169
+\end{equation}
+\begin{equation}
+\label{TS_scaling_2}
+E_{H\mathrm{-}OH^{*_s}} = 0.465E_{O^{*_s}} + 0.243E_{CO^{*_s}} - 0.134
+\end{equation}
+\begin{equation}
+\label{TS_scaling_3}
+E_{O\mathrm{-}CO^{*_s}} = 0.701E_{O^{*_s}} + 0.701E_{CO^{*_s}} + 1.756
+\end{equation}
+\begin{equation}
+\label{TS_scaling_4}
+E_{O\mathrm{-}H^{*_s}} = 0.995E_{O^{*_s}} + 0.471
+\end{equation}
+\begin{equation}
+\label{TS_scaling_5}
+E_{O\mathrm{-}O^{*_s}} = 1.105E_{O^{*_s}} + 3.151
+\end{equation}\section{Thermodynamics Summary}
+\section{Solver Summary}
+\begin{verbatim}s = [0]*2
+s[0] = (mpf('0.0'))
+s[1] = (mpf('1.0') - theta[0] - theta[1] - theta[2] - theta[3] - theta[4] - theta[5] - theta[6] - theta[7])
+r[0] = kf[0]*p[1]*s[1] - kr[0]*theta[2]
+r[1] = kf[1]*p[3]*s[1]*s[1] - kr[1]*theta[7]*theta[7]
+r[2] = kf[2]*theta[2]*theta[7] - kr[2]*p[0]*s[1]*s[1]
+r[3] = kf[3]*p[0]*s[1]*s[1] - kr[3]*theta[7]*theta[2]
+r[4] = kf[4]*theta[2]*s[1] - kr[4]*theta[3]*theta[7]
+r[5] = kf[5]*theta[7]*theta[7] - kr[5]*p[3]*s[1]*s[1]
+r[6] = kf[6]*p[2] - kr[6]*p[2]
+r[7] = kf[7]*p[2]*s[1] - kr[7]*theta[4]
+r[8] = kf[8]*theta[4] - kr[8]*p[2]*s[1]
+r[9] = kf[9]*theta[4]*s[1] - kr[9]*theta[5]*theta[6]
+r[10] = kf[10]*theta[6]*s[1] - kr[10]*theta[7]*theta[5]
+r[11] = kf[11]*theta[5]*theta[3] - kr[11]*theta[0]*s[1]
+r[12] = kf[12]*theta[5]*theta[7] - kr[12]*theta[6]*s[1]
+r[13] = kf[13]*theta[6]*theta[6] - kr[13]*theta[4]*theta[7]
+r[14] = kf[14]*theta[2]*theta[7] - kr[14]*p[0]*s[1]*s[1]
+r[15] = kf[15]*theta[2] - kr[15]*p[1]*s[1]
+r[16] = kf[16]*theta[0]*theta[7] - kr[16]*theta[1]*s[1]
+r[17] = kf[17]*theta[7]*theta[5] - kr[17]*theta[6]*s[1]
+dtheta_dt[0] =  + 1*r[11] + -1*r[16]
+dtheta_dt[1] =  + 1*r[16]
+dtheta_dt[2] =  + 1*r[0] + -1*r[2] + 1*r[3] + -1*r[4] + -1*r[14] + -1*r[15]
+dtheta_dt[3] =  + 1*r[4] + -1*r[11]
+dtheta_dt[4] =  + 1*r[7] + -1*r[8] + -1*r[9] + 1*r[13]
+dtheta_dt[5] =  + 1*r[9] + 1*r[10] + -1*r[11] + -1*r[12] + -1*r[17]
+dtheta_dt[6] =  + 1*r[9] + -1*r[10] + 1*r[12] + -2*r[13] + 1*r[17]
+dtheta_dt[7] =  + 2*r[1] + -1*r[2] + 1*r[3] + 1*r[4] + -2*r[5] + 1*r[10] + -1*r[12] + 1*r[13] + -1*r[14] + -1*r[16] + -1*r[17]
+\end{verbatim}\section{Input Summary}
+
+\centering
+\begin{longtable}{lllll}
+\toprule
+Species & Surface & Formation Energy [eV] & Vibrational Frequencies [meV] & Reference \\
+\midrule
+\endfirsthead
+\toprule
+Species & Surface & Formation Energy [eV] & Vibrational Frequencies [meV] & Reference \\
+\midrule
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+
+$CO_{2(g)}$&gas&2.45&\parbox[t]{3cm}{165.3, 291.2, 82.7\\82.7}&\parbox[t]{4cm}{Angew. Chem. Int. Ed., 47, 4835 (2008)}\\
+$CO_{(g)}$&gas&2.74&\parbox[t]{3cm}{269.0}&\parbox[t]{4cm}{Energy Environ. Sci., 3, 1311-1315 (2010)}\\
+$H_{2}O_{(g)}$&gas&0.0&\parbox[t]{3cm}&\parbox[t]{4cm}{[]}\\
+$O_{2(g)}$&gas&5.42&\parbox[t]{3cm}{195.9}&\parbox[t]{4cm}{Falsig et al (2012)}\\
+$CH^{*_s}$& Pt& 1.19& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CH^{*_s}$& Ag& 3.92& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CH^{*_s}$& Cu& 2.7& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CH^{*_s}$& Rh& 1.01& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CH^{*_s}$& Pd& 1.57& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CH^{*_s}$& Au& 3.43& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CH^{*_s}$& Ru& 0.71& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CH^{*_s}$& Ni& 1.22& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$CO^{*_s}$& Pt& 1.11& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$CO^{*_s}$& Ag& 2.87& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$CO^{*_s}$& Cu& 2.28& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$CO^{*_s}$& Rh& 1.07& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$CO^{*_s}$& Pd& 1.22& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$CO^{*_s}$& Au& 2.57& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$CO^{*_s}$& Ru& 0.98& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$CO^{*_s}$& Ni& 1.25& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$C^{*_s}$& Pt& 2.1& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C^{*_s}$& Ag& 5.07& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C^{*_s}$& Cu& 3.54& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C^{*_s}$& Rh& 1.38& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C^{*_s}$& Pd& 1.51& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C^{*_s}$& Au& 4.77& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C^{*_s}$& Ru& 1.23& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C^{*_s}$& Ni& 1.52& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H^{*_s}$& Pt& -0.35& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H^{*_s}$& Ag& 0.24& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H^{*_s}$& Cu& -0.09& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H^{*_s}$& Rh& -0.32& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H^{*_s}$& Pd& -0.4& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H^{*_s}$& Au& 0.17& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H^{*_s}$& Ru& -0.44& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Pt& 0.36& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Ag& 0.49& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Cu& -0.04& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Rh& -0.37& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Pd& 0.34& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Au& 0.94& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Ru& -0.69& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$OH^{*_s}$& Ni& -0.5& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O^{*_s}$& Pt& 1.32& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O^{*_s}$& Ag& 2.11& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O^{*_s}$& Cu& 0.93& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O^{*_s}$& Rh& 0.28& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O^{*_s}$& Pd& 1.58& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O^{*_s}$& Au& 2.61& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O^{*_s}$& Ru& -0.1& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O^{*_s}$& Ni& 0.18& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$C\mathrm{-}O^{*_s}$& Pt& 4.11& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C\mathrm{-}O^{*_s}$& Ag& 8.07& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C\mathrm{-}O^{*_s}$& Rh& 3.03& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C\mathrm{-}O^{*_s}$& Pd& 4.63& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C\mathrm{-}O^{*_s}$& Au& 8.18& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$C\mathrm{-}O^{*_s}$& Ru& 2.8& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H\mathrm{-}OH^{*_s}$& Pt& 0.72& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H\mathrm{-}OH^{*_s}$& Cu& 0.8& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H\mathrm{-}OH^{*_s}$& Rh& 0.49& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H\mathrm{-}OH^{*_s}$& Pd& 0.82& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H\mathrm{-}OH^{*_s}$& Au& 1.82& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$H\mathrm{-}OH^{*_s}$& Ru& -0.01& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}CO^{*_s}$& Pt& 3.53& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}CO^{*_s}$& Ag& 5.1& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}CO^{*_s}$& Cu& 3.92& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}CO^{*_s}$& Rh& 2.56& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}CO^{*_s}$& Pd& 3.99& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}CO^{*_s}$& Au& 5.45& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}CO^{*_s}$& Ru& 2.35& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}CO^{*_s}$& Ni& 2.77& & \parbox[t]{4cm}{J. Phys. Chem. C, 113 (24), 10548-10553 (2009)}\\
+$O\mathrm{-}H^{*_s}$& Pt& 1.6& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}H^{*_s}$& Ag& 2.8& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}H^{*_s}$& Cu& 1.63& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}H^{*_s}$& Rh& 0.73& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}H^{*_s}$& Pd& 1.75& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}H^{*_s}$& Au& 3.18& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}H^{*_s}$& Ru& 0.27& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}H^{*_s}$& Ni& 0.68& & \parbox[t]{4cm}{Fatima Jalid Tuhin S Khan}\\
+$O\mathrm{-}O^{*_s}$& Pt& 4.9& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+$O\mathrm{-}O^{*_s}$& Ag& 5.34& & \parbox[t]{4cm}{Falsig et al (2012)}\\
+
+
+\bottomrule
+\end{longtable}
+
+
+\end{document}
