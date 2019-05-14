@@ -18,7 +18,7 @@ rxn_expressions = [
                'H_s + C_s <-> C-H* + *_s -> CH* + *_s',
                'H_s + O_s -> O-H* + *_s -> OH* + *_s',
                'OH* + OH* <-> O-H2O* + *_s -> H2O_g + O* + *_s',
-               'C* + OH* <-> C-OH* + *_s -> COH* + *_s'
+
  ]
 
 
@@ -78,7 +78,7 @@ scaling_constraint_dict = {
                            'H-OH_s':'final_state',
                            'C-H_s':'initial_state',
                            'O-H2O_s':'initial_state',
-                           'C-OH_s':'initial_state',
+                          
                            }
 
 
