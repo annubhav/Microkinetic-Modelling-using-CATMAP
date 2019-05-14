@@ -18,30 +18,8 @@ rxn_expressions = [
                'H_s + C_s <-> C-H* + *_s -> CH* + *_s',
                'H_s + O_s -> O-H* + *_s -> OH* + *_s',
                'OH* + OH* <-> O-H2O* + *_s -> H2O_g + O* + *_s',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                   ]
+               'C* + OH* <-> C-OH* + *_s -> COH* + *_s'
+ ]
 
 
 surface_names = ['Pt', 'Ag', 'Cu','Rh','Pd','Au','Ru','Ni'] #surfaces to include in scaling (need to have descriptors defined for each)
@@ -50,9 +28,9 @@ descriptor_names= ['O_s','CO_s',] #descriptor names
 
 descriptor_ranges = [[-1,3],[-0.5,4]]
 
-resolution = 50
+resolution = 75
 
-temperature = 500 #Temperature of the reaction
+temperature = 750 #Temperature of the reaction
 
 species_definitions = {}
 species_definitions['CO_g'] = {'pressure':1.} #define the gas pressures
@@ -100,6 +78,7 @@ scaling_constraint_dict = {
                            'H-OH_s':'final_state',
                            'C-H_s':'initial_state',
                            'O-H2O_s':'initial_state',
+                           'C-OH_s':'initial_state',
                            }
 
 
@@ -112,10 +91,10 @@ rxn_mechanisms = {  # these are 1-indexed
 #Solver parameters
 #
 
-decimal_precision = 100 #precision of numbers involved
+decimal_precision = 200 #precision of numbers involved
 
-tolerance = 1e-100 #all d_theta/d_t's must be less than this at the solution
+tolerance = 1e-200 #all d_theta/d_t's must be less than this at the solution
 
 max_rootfinding_iterations = 100
 
-max_bisections = 6
+max_bisections = 5
