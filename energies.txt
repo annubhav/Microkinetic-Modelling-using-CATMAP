@@ -3,7 +3,7 @@ None	gas	CO2	2.45	None	[1333,2349,667,667]	[]	"Angew. Chem. Int. Ed., 47, 4835 (
 None	gas	CO	2.74	None	[2170]	[]	"Energy Environ. Sci., 3, 1311-1315 (2010)"
 None	gas	O2	5.42	None	[1580]	[]	Falsig et al (2012)
 None	gas	H2O	0.00		None	[3657,1595,3756]	[]
-None	gas	H2	0.001	None	[4401]	[]
+None	gas	H2	0.00	None	[4170]	[]	0
 None	gas	CH4	0	None	[2917,1534,1534,3019,3019,2019,1306,1306,1306]	[]	Fatima Jalid, Tuhin S Khan
 Re	111	O	-1.15	fcc	[]	[]	Falsig et al (2012)
 Ru	111	O	-0.07	fcc	[]	[]	Falsig et al (2012)
@@ -272,3 +272,7 @@ Cu	211	CH2O	2.35	fcc	[]	[]	4
 Pd	211	CH2O	1.92	fcc	[]	[]	4
 Pt	211	CH2O	1.77	fcc	[]	[]	4
 Rh	211	CH2O	1.43	fcc	[]	[]	4
+Pt	211	H-H	0.19	fcc	[]	[]	4
+Cu	211	H-H	0.78	fcc	[]	[]	4
+Pd	211	H-H	0.12	fcc	[]	[]	4
+Au	211	H-H	1.15	fcc	[]	[]	4
