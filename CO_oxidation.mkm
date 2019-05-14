@@ -9,24 +9,16 @@ rxn_expressions = [
 #               '*_s + O2_g -> O2_s',
 #               '*_s + O2_s <-> O-O* + *_s -> 2O*',
                'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',
-               'CO2_g + 2*_s <-> O-CO*_s + *_s -> O*_s + CO*_s',
-
                'CO* + *_s <-> C-O* + *_s -> C* + O*',
                '2O* -> O2_g + 2*_s',
                'H2O_g -> H2O_g',
                'H2O_g + *_s -> H2O*',
-               'H2O* -> H2O_g + *_s',
                'H2O* + *_s <-> H-OH* + *_s -> H* + OH*',
-
                'OH* + *_s <-> O-H* + *_s -> O* + H*',
-               'H_s + C_s -> CH* + *_s',
-               'H_s + O_s -> OH* + *_s',
-               '2OH* -> H2O* + O*',
-               'CO* + O* -> CO2_g + 2*_s',
-               'CO* -> CO_g + *_s',
-               'CH* + O* -> COH* + *_s',
+               'H_s + C_s <-> C-H* + *_s -> CH* + *_s',
+               'H_s + O_s -> O-H* + *_s -> OH* + *_s',
+               'OH* + OH* <-> O-H2O* + *_s -> H2O_g + O* + *_s',
 
-               'O* + H* <-> O-H* + *_s -> OH* + *_s',
 
 
 
@@ -103,11 +95,11 @@ scaling_constraint_dict = {
                            'CO_s':[0,'+',None],
                            'O-CO_s':'initial_state',
                            'O-O_s':'final_state',
-                           'O-CO_s':'final_state',
                            'C-O_s':'final_state',
                            'O-H_s':'final_state',
-
-                          'H-OH_s':'final_state',
+                           'H-OH_s':'final_state',
+                           'C-H_s':'initial_state',
+                           'O-H2O_s':'initial_state',
                            }
 
 
