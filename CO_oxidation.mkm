@@ -20,6 +20,12 @@ rxn_expressions = [
                'OH* + OH* <-> O-H2O* + *_s -> H2O_g + O* + *_s',
                'H* + H* <-> H-H* + *_s -> H2_g + 2*_s',
                'CO* + H* <-> H-CO* + *_s -> HCO* + *_s',
+               'HCO* + H* <-> H-HCO* + *_s -> CH2O* + *_s',
+               'HCO* + *_s <-> O-CH* + *_s -> CH* + O*',
+               'CH2O* + + *_s <-> O-CH2* + *_s -> CH2* + O*',
+               'CH2O* + H* <-> H-CH2O* + *_s -> CH3O* + *_s',
+               'CH3O* + *_s <-> O-CH3* + *_s -> CH3* + O*',
+
 
 
  ]
@@ -83,7 +89,13 @@ scaling_constraint_dict = {
                            'C-H_s':'initial_state',
                            'O-H2O_s':'initial_state',
                            'H-H_s':'initial_state',
-                           'H-CO_s':'initial_state'
+                           'H-CO_s':'initial_state',
+                           'H-HCO_s':'initial_state',
+                           'O-CH_s':'final_state',
+                           'O-CH2_s':'final_state',
+                           'H-CH2O_s':'initial_state',
+                           'O-CH3_s':'final_state',
+                           
 
                            }
 
