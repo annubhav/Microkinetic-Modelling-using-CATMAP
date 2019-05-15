@@ -276,3 +276,9 @@ Pt	211	H-H	0.19	fcc	[]	[]	4
 Cu	211	H-H	0.78	fcc	[]	[]	4
 Pd	211	H-H	0.12	fcc	[]	[]	4
 Au	211	H-H	1.15	fcc	[]	[]	4
+Cu	211	HCO	2.75	Fcc	[]	[]	4
+Pd	211	HCO	1.84	Fcc	[]	[]	4
+Pt	211	HCO	1.79	Fcc	[]	[]	4
+Ag	211	HCO	3.21	Fcc	[]	[]	4
+Rh	211	HCO	1.83	Fcc	[]	[]	4
+Au	211	HCO	2.83	Fcc	[]	[]	4
