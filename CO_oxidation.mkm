@@ -44,7 +44,7 @@ temperature = 750 #Temperature of the reaction
 
 species_definitions = {}
 species_definitions['CO_g'] = {'pressure':1.} #define the gas pressures
-species_definitions['O2_g'] = {'pressure':1./3.}
+species_definitions['O2_g'] = {'pressure':0}
 species_definitions['CO2_g'] = {'pressure':0}
 species_definitions['H2O_g'] = {'pressure':1.}
 species_definitions['H2_g'] = {'pressure':0}
