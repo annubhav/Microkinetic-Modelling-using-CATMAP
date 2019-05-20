@@ -5,7 +5,7 @@
 rxn_expressions = [
 
                '*_s + CO_g -> CO*',
-               '2*_s + O2_g <-> O-O* + *_s -> 2O*',
+#               '2*_s + O2_g <-> O-O* + *_s -> 2O*',
 #               '*_s + O2_g -> O2_s',
 #               '*_s + O2_s <-> O-O* + *_s -> 2O*',
                'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',
@@ -15,8 +15,8 @@ rxn_expressions = [
                'H2O_g + *_s -> H2O*',
                'H2O* + *_s <-> H-OH* + *_s -> H* + OH*',
                'OH* + *_s <-> O-H* + *_s -> O* + H*',
-               'H_s + C_s <-> C-H* + *_s -> CH* + *_s',
-               'H_s + O_s -> O-H* + *_s -> OH* + *_s',
+               'H* + C* <-> C-H* + *_s -> CH* + *_s',
+               'H* + O* -> O-H* + *_s -> OH* + *_s',
                'OH* + OH* <-> O-H2O* + *_s -> H2O_g + O* + *_s',
                'H* + H* <-> H-H* + *_s -> H2_g + 2*_s',
                'CO* + H* <-> H-CO* + *_s -> HCO* + *_s',
