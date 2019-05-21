@@ -36,7 +36,7 @@ surface_names = ['Pt', 'Ag', 'Cu','Rh','Pd','Au','Ru','Ni'] #surfaces to include
 
 descriptor_names= ['O_s','CO_s',] #descriptor names
 
-descriptor_ranges = [[-10,10],[-10,10]]
+descriptor_ranges = [[-0.5,5],[-0.5,5]]
 
 resolution = 15
 
