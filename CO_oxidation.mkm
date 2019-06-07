@@ -10,7 +10,7 @@ rxn_expressions = [
 #               '*_s + O2_s <-> O-O* + *_s -> 2O*',
                'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',
                'CO* + *_s <-> C-O* + *_s -> C* + O*',
-               '2O* -> O2_g + 2*_s',
+               '2O* <-> O-O* + *_s -> O2_g + 2*_s',
                'H2O_g -> H2O_g',
                'H2O_g + *_s -> H2O*',
                'H2O* + *_s <-> H-OH* + *_s -> H* + OH*',
@@ -25,11 +25,7 @@ rxn_expressions = [
                'CH2O* + + *_s <-> O-CH2* + *_s -> CH2* + O*',
                'CH2O* + H* <-> H-CH2O* + *_s -> CH3O* + *_s',
                'CH3O* + *_s <-> O-CH3* + *_s -> CH3* + O*',
-               'CH3* + H* <-> H-CH3* + *_s -> CH4_g + 2*_s',
-
-
-
- ]
+               'CH3* + H* <-> H-CH3* + *_s -> CH4_g + 2*_s',]
 
 
 surface_names = ['Pt', 'Ag', 'Cu','Rh','Pd','Au','Ru','Ni'] #surfaces to include in scaling (need to have descriptors defined for each)
@@ -43,10 +39,10 @@ resolution = 50
 temperature = 750 #Temperature of the reaction
 
 species_definitions = {}
-species_definitions['CO_g'] = {'pressure':1.} #define the gas pressures
+species_definitions['CO_g'] = {'pressure':0.5} #define the gas pressures
 species_definitions['O2_g'] = {'pressure':0}
 species_definitions['CO2_g'] = {'pressure':0}
-species_definitions['H2O_g'] = {'pressure':1.}
+species_definitions['H2O_g'] = {'pressure':1.0}
 species_definitions['H2_g'] = {'pressure':0}
 species_definitions['CH4_g'] = {'pressure':0}
 
@@ -84,7 +80,7 @@ scaling_constraint_dict = {
                            'O_s':['+',0,None],
                            'CO_s':[0,'+',None],
                            'O-CO_s':'initial_state',
-                           'O-O_s':'final_state',
+                           'O-O_s':'initial_state',
                            'C-O_s':'final_state',
                            'O-H_s':'final_state',
                            'H-OH_s':'final_state',
