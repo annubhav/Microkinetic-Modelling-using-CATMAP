@@ -5,9 +5,6 @@
 rxn_expressions = [
 
                '*_s + CO_g -> CO*',
-#               '2*_s + O2_g <-> O-O* + *_s -> 2O*',
-#               '*_s + O2_g -> O2_s',
-#               '*_s + O2_s <-> O-O* + *_s -> 2O*',
                'CO* +  O* <-> O-CO* + * -> CO2_g + 2*',
                'CO* + *_s <-> C-O* + *_s -> C* + O*',
                '2O* <-> O-O* + *_s -> O2_g + 2*_s',
@@ -34,7 +31,7 @@ descriptor_names= ['O_s','CO_s',] #descriptor names
 
 descriptor_ranges = [[-0.5,5],[-0.5,5]]
 
-resolution = 15
+resolution = 50
 
 temperature = 750 #Temperature of the reaction
 
@@ -94,8 +91,6 @@ scaling_constraint_dict = {
                            'H-CH2O_s':'initial_state',
                            'O-CH3_s':'final_state',
                            'H-CH3_s':'initial_state',
-
-
                            }
 
 
