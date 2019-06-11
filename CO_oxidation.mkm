@@ -22,7 +22,9 @@ rxn_expressions = [
                'CH2O* + + *_s <-> O-CH2* + *_s -> CH2* + O*',
                'CH2O* + H* <-> H-CH2O* + *_s -> CH3O* + *_s',
                'CH3O* + *_s <-> O-CH3* + *_s -> CH3* + O*',
-               'CH3* + H* <-> H-CH3* + *_s -> CH4_g + 2*_s',]
+               'CH3* + H* <-> H-CH3* + *_s -> CH4_g + 2*_s',
+
+              ]
 
 
 surface_names = ['Pt', 'Ag', 'Cu','Rh','Pd','Au','Ru','Ni'] #surfaces to include in scaling (need to have descriptors defined for each)
@@ -31,7 +33,7 @@ descriptor_names= ['O_s','CO_s',] #descriptor names
 
 descriptor_ranges = [[-0.5,5],[-0.5,5]]
 
-resolution = 50
+resolution = 15
 
 temperature = 750 #Temperature of the reaction
 
@@ -94,10 +96,7 @@ scaling_constraint_dict = {
                            }
 
 
-rxn_mechanisms = {  # these are 1-indexed
-   "steps": [1, 1, 2, 3, 3],
 
-}
 
 #
 #Solver parameters
