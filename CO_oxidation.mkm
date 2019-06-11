@@ -41,7 +41,7 @@ species_definitions = {}
 species_definitions['CO_g'] = {'pressure':0.5} #define the gas pressures
 species_definitions['O2_g'] = {'pressure':0}
 species_definitions['CO2_g'] = {'pressure':0}
-species_definitions['H2O_g'] = {'pressure':1.0}
+species_definitions['H2O_g'] = {'pressure':1.5}
 species_definitions['H2_g'] = {'pressure':0}
 species_definitions['CH4_g'] = {'pressure':0}
 
